@@ -1,0 +1,109 @@
+/* variables */
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; /* hace que no se modifique el tammano de la caja cuando anadimos padding, margin, etc dentro de esta. */
+  font-size: 62.5%; /* 10px o 1rem */
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--Dark-cyan);
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center; /* centrar en horizontal el contenido de los hijo/s (en este caso es card) */
+  align-items: center;
+  height: 100vh; /* Es el 100% (1vh = 1% de la ventana) de la medida de la ventana del navegador utilizado por el dispositivo*/
+}
+
+.card {
+  background-color: white;
+  width: 350px; /* ancho de la caja */
+  border-radius: 15px;
+  overflow: hidden; /* oculta o corta todo lo que sobresalga del contenedor */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* sombras  box-shadow: compensar-x | compensar-y | degradado | color */
+}
+
+.card-header {
+  width: 100%; /* el ancho de la imagen tome el 100% del espacio de su caja padre */
+  display: block; /* eliminar espacios fantasma */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column; /* ordenar los hijos en columbas */
+  align-items: center; /* alinear en vertical los hijos, es vertical porque utilizamos flex-direction:  column; */
+  border-bottom: 1px solid hsla(0, 0%, 59%, 0.3);
+}
+
+.card-body-img {
+  border: solid 5px white;
+  border-radius: 50%;
+  margin-top: calc(
+    -48px - 5px
+  ); /* calc calcula el margin menos los 5px que le sumamos en el borde */
+  background-color: white;
+}
+
+.card-body-title {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: var(--Very-dark-desaturated);
+}
+
+.card-body-title span {
+  font-size: 1.8rem;
+  color: var(--Dark-gray);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.card-body-text {
+  color: var(--Dark-gray);
+  font-size: 1.4rem;
+  margin-top: 0px;
+  margin-bottom: 2rem; /* se le anade 2rem ya que en el title se le coloco 2rem top */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px 0 18px;
+}
+
+.card-footer-social h3 {
+  font-size: 1.8rem;
+  color: var(--Very-dark-desaturated);
+}
+
+.card-footer-social p {
+  margin-top: -12px;
+  font-size: 1.1rem;
+  color: var(--Dark-gray);
+}
